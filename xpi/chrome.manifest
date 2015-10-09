@@ -1,0 +1,13 @@
+content   kde5wallet                 chrome/content/
+overlay   chrome://browser/content/browser.xul chrome://kde5wallet/content/browser.xul
+locale    kde5wallet   en-US         chrome/locale/en-US/
+locale    kde5wallet   es-ES         chrome/locale/es-ES/
+locale    kde5wallet   de-DE         chrome/locale/de-DE/
+locale    kde5wallet   fr-FR         chrome/locale/fr-FR/
+locale    kde5wallet   pt-BR         chrome/locale/pt-BR/
+resource  kde5wallet   ./
+resource  libkde5wallet components/libkde5wallet_x86_64.so abi=Linux_x86_64-gcc3
+
+component {734ef55a-6ca9-11e5-abe4-cbcca39e461b} components/KDE5WalletStorage.js
+contract @guillermo.molina/kde5wallet;1 {734ef55a-6ca9-11e5-abe4-cbcca39e461b}
+category login-manager-storage nsILoginManagerStorage @guillermo.molina/kde5wallet;1

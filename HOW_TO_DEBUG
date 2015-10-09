@@ -1,0 +1,5 @@
+Enable channel 9500 with kdebugdialog
+KDE part will output debug info to the konsole
+
+Change Signon.debug to true in about:config
+Firefox part will output debug info to the javascript console (CTRL+SHIFT+J)

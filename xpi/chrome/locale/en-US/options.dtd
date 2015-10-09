@@ -1,0 +1,9 @@
+<!ENTITY prefwindow.title "Firefox-KDE5Wallet preferences">
+<!ENTITY pane1.title "Firefox-KDE5Wallet preferences">
+<!ENTITY wallet.label "Select wallet">
+<!ENTITY localwallet.label "Local Wallet">
+<!ENTITY localwallet.accesskey "L">
+<!ENTITY networkwallet.label "Network Wallet">
+<!ENTITY networkwallet.accesskey "N">
+<!ENTITY folder.label "Select folder name">
+<!ENTITY folder.accesskey "F">
