@@ -1,5 +1,5 @@
-VERSION = 1.0
-FIREFOX_VERSION = 41
+VERSION = 1.1
+FIREFOX_VERSION = 47
 BUILD_DIR = build
 XPI_TARGET = firefox-kde5-wallet-$(VERSION).xpi
 TARBAL_TARGET = firefox-kde5-wallet-$(VERSION).tar.gz

@@ -71,6 +71,8 @@ LoginInfo* loginInfoBuffer = 0;
 
 uint32_t disabledHostsBufferCount = 0;
 char** disabledHostsBuffer = 0;
+int fakeargc = 0;
+char *fakeargv[] = { NULL };
 
 void KDE5Wallet_SetWalletType( const char* _walletType  ) {
 	qDebug() << "Start";
@@ -153,11 +155,8 @@ int32_t KDE5Wallet_Init() {
 	qDebug() << "Start";
 
         // KWindowSystem requires a functioning QGuiApplication or it will segfault
-        if (!app) {
-            int fakeargc = 0;
-            char *fakeargv[] = { NULL };
+        if (!app)
             app = new QGuiApplication(fakeargc, fakeargv);
-        }
 
         if (!app) {
             qCritical() << "Could not create KApplication";
