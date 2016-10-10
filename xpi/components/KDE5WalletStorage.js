@@ -224,24 +224,32 @@ KDE5WalletStorage.prototype = {
     searchLogins: function (outCount, matchData) {
 		this.log( "searchLogins() Start" );
 		let propEnum = matchData.enumerator;
-		var guid;
+		var guid, hostname, formSubmitURL, realm;
 		while (propEnum.hasMoreElements()) {
 			let prop = propEnum.getNext().QueryInterface(Ci.nsIProperty);
 			switch (prop.name) {
+				case "hostname":
+                    hostname = prop.value;
+                    break;
+				case "formSubmitURL":
+                    formSubmitURL = prop.value;
+                    break;
+				case "httpRealm":
+                    realm = prop.value;
+                    break;
+                case "schemeUpgrades":
+                    // Mozilla internal scheme upgrade, do nothing
+                    break;
+/*				case "username":
+				case "password":
+				case "usernameField":
+				case "passwordField":*/
+                    
+				// nsILoginMetaInfo properties...
 				case "guid":
 					guid = prop.value;
 					break;
-/*					
-				case "hostname":
-				case "username":
-				case "password":
-				case "formSubmitURL":
-				case "usernameField":
-				case "passwordField":
-				case "httpRealm":
-				// nsILoginMetaInfo properties...
-//				case "guid":
-				case "timeCreated":
+/*				case "timeCreated":
 				case "timeLastUsed":
 				case "timePasswordChanged":
 				case "timesUsed":
@@ -251,7 +259,11 @@ KDE5WalletStorage.prototype = {
 					throw "Unexpected propertybag item: " + prop.name;
 			}
 		}
-        let entries = this._lib.findLoginsWithGuid( guid );
+        let entries;
+        if( guid )
+            entries = this._lib.findLoginsWithGuid( guid );
+        else
+            entries = this._lib.findLogins( hostname, formSubmitURL, realm );
  		return this._array2NsILoginInfo( outCount, entries );
     },
 
