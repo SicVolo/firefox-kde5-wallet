@@ -26,5 +26,6 @@
         <em:maxVersion>49.*</em:maxVersion>
       </Description>
     </em:targetApplication>
+    <em:multiprocessCompatible>true</em:multiprocessCompatible>
   </Description>
 </RDF>

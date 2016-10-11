@@ -1,5 +1,6 @@
 Version 1.2:
    * Fixed search mechanism, thanks tomglx
+   * Mark extension as multiprocess compatible
 
 Version 1.1:
    * Fixed crash, thanks cyberbeat
