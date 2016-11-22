@@ -1,3 +1,5 @@
+Version 1.3.1:
+	bugfix from 1.3 and moved to git
 Version 1.2:
    * Fixed search mechanism, thanks tomglx
    * Mark extension as multiprocess compatible

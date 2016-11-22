@@ -1,4 +1,4 @@
-VERSION = 1.2
+VERSION = 1.3.1
 FIREFOX_VERSION = 49
 BUILD_DIR = build
 XPI_TARGET = firefox-kde5-wallet-$(VERSION).xpi
@@ -36,4 +36,3 @@ clean:
 	rm -rf $(BUILD_DIR)
 	rm -f $(TARGET_DIR)/$(LIBNAME)
 	rm -f $(XPI_TARGET)
-

@@ -2,19 +2,11 @@ Need:
 
 cmake g++ extra-cmake-modules libkf5wallet-dev
 
-To build do:
-
-mkdir build
-cd build
-cmake ../library
-make
-cd ..
+Then run
 make
 
-To create the archive do:
-
+Make creates the xpi archive. You can re-create it
 make archive
 
 To create tarball do:
-
 make tarbal

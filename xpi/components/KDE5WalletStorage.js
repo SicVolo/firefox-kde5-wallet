@@ -224,8 +224,14 @@ KDE5WalletStorage.prototype = {
     searchLogins: function (outCount, matchData) {
 		this.log( "searchLogins() Start" );
 		let propEnum = matchData.enumerator;
-		var guid, hostname, formSubmitURL, realm;
-		while (propEnum.hasMoreElements()) {
+		var guid;
+		
+        // The function _lib.findLogins() crashes if one parameter is "undefined" : previously, set the vars to null
+        var hostname = null;
+        var submitURL = null;
+        var realm = null;
+
+        while (propEnum.hasMoreElements()) {
 			let prop = propEnum.getNext().QueryInterface(Ci.nsIProperty);
 			switch (prop.name) {
 				case "hostname":
